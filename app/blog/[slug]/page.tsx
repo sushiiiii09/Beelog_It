@@ -4,6 +4,9 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 
 // Function to fetch data for a single blog post
+
+export const revalidate=300;
+
 async function getData(slug: string) {
   const query = `
     *[_type == 'blog' && slug.current == '${slug}'][0]{
